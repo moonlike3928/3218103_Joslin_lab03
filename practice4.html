@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice 4</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section>
+
+        <p>
+            <form method="post" action="">
+                Table size: <input type="number" name="size" min="1" max="20" value="<?php echo isset($_POST['size']) ? (int)$_POST['size'] : 10; ?>">
+                <input type="submit" value="Generate">
+            </form>
+        </p>
+        <!-- if size is set, then clamp it to between 1 and 20 -->
+        <?php if (isset($_POST['size'])):
+            $size = (int)$_POST['size'];
+            // min size 1
+            if ($size < 1) $size = 1;
+            // max size 20
+            if ($size > 20) $size = 20;
+
+        ?>
+        <table border="1">
+            <tr>
+                <th>&times;</th>
+                <!-- construct the columns -->
+                <?php for ($col = 1; $col <= $size; $col++): ?>
+                    <th><?php echo $col; ?></th>
+                <?php endfor; ?>
+            </tr>
+            <!-- construct the rows -->
+            <?php for ($row = 1; $row <= $size; $row++): ?>
+                <tr>
+                    <th><?php echo $row; ?></th>
+                    <?php for ($col = 1; $col <= $size; $col++): ?>
+                    <!-- populate row with proper values based on position -->
+                        <td><?php echo $row * $col; ?></td>
+                    <?php endfor; ?>
+                </tr>
+            <?php endfor; ?>
+        </table>
+        <?php endif; ?>
+    </section>
+</body>
+</html>

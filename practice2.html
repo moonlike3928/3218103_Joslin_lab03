@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice 2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Color & Border Controller</h1>
+
+        <div class="content">
+            <div class="paragraph-section">
+                <p id="targetParagraph">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                </p>
+            </div>
+
+            <div class="controls-section">
+                <div class="control-group">
+                    <label>RGB Color</label>
+                    <div class="rgb-inputs">
+                        <div class="rgb-input-wrapper">
+                            <label for="redInput" style="font-size: 12px;">Red</label>
+                            <input type="number" id="redInput" min="0" max="255" value="100">
+                        </div>
+                        <div class="rgb-input-wrapper">
+                            <label for="greenInput" style="font-size: 12px;">Green</label>
+                            <input type="number" id="greenInput" min="0" max="255" value="100">
+                        </div>
+                        <div class="rgb-input-wrapper">
+                            <label for="blueInput" style="font-size: 12px;">Blue</label>
+                            <input type="number" id="blueInput" min="0" max="255" value="100">
+                        </div>
+                    </div>
+                    <div class="color-preview" id="colorPreview"></div>
+                </div>
+
+                <div class="control-group width-control">
+                    <label>Border Width</label>
+                    <div class="width-inputs">
+                        <input type="range" id="borderWidthSlider" min="0" max="20" value="2">
+                        <input type="number" id="borderWidthNumber" min="0" max="20" value="2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="colorchanger.js"></script>
+</body>
+</html>
